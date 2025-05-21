@@ -12,7 +12,7 @@ if __name__ == '__main__':
     ticker_symbol = args.ticker.upper()
     stock_id = ticker_symbol.split('.')[0].zfill(5)
 
-    api_key = 'sk-c6cc47723b7b4feea275486e154b79b6'
+    api_key = 'your-api-key-here'
     model_type = args.model
     # model_type = 'deepseek-reasoner'
     main(stock_id, api_key, model_type)
