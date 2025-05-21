@@ -3,6 +3,7 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 def create_interactive_chart(df, stock_id):
     fig = make_subplots(
@@ -91,4 +92,4 @@ def plot_return_distribution(df, stock_id):
     plt.ylabel('Frequency')
     plt.grid(True)
     plt.savefig(f"./output/{stock_id}/return_distribution_{datetime.now().strftime('%Y%m%d')}.png")
-    plt.show()
+    plt.close()

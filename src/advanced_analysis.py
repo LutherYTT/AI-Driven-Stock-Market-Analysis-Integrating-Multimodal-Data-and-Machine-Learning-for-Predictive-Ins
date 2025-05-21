@@ -11,6 +11,7 @@ import os
 from datetime import datetime
 
 matplotlib.use('Agg')
+plt.show = lambda: None
 plt.rcParams['figure.figsize'] = [15, 12]
 plt.rcParams.update({'font.size': 12})
 
@@ -31,7 +32,7 @@ def volatility_clustering(df, stock_id):
     plt.ylabel('Close Price')
     plt.legend()
     plt.savefig(f"./output/{stock_id}/volatility_clustering_{datetime.now().strftime('%Y%m%d')}.png")
-    plt.close()
+    plt.show()
 
 # Backtesting 
 class MA_CrossStrategy(bt.Strategy):
@@ -63,10 +64,11 @@ def run_backtest(df, stock_id):
     # Save Backtest Chart
     img_name = f"./output/{stock_id}/backtest_result_{datetime.now().strftime('%Y%m%d')}.png"
     fig[0][0].savefig(img_name)
-
+  
     # Display the saved image
-    # from IPython.display import Image
-    # Image(filename=img_name)
+    from IPython.display import Image
+    Image(filename=img_name)
+
 
 
 # Anomaly Detection
@@ -81,4 +83,4 @@ def anomaly_detection(df, stock_id):
     plt.title('Anomaly Detection')
     plt.legend()
     plt.savefig(f"./output/{stock_id}/anomaly_detection_{datetime.now().strftime('%Y%m%d')}.png")
-    plt.close()
+    plt.show()
