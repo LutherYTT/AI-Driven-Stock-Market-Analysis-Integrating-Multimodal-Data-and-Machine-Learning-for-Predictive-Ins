@@ -73,13 +73,6 @@ python deepseek_integration.py --ticker "01810.HK" --model "deepseek-reasoner"
 ```  
 - Outputs: `Deepseet_Output.txt` with trading signals and risk assessments.  
 
-### 4. Price Forecasting  
-```python  
-from price_forecast import lstm_price_prediction  
-lstm_price_prediction(df, stock_id)  # Use preprocessed data  
-```  
-- Outputs: Forecast plots and model checkpoints.  
-
 ---
 
 ## 📂 Project Structure  
