@@ -224,11 +224,11 @@ def scrape_sina_stock_news(stock_id, save_csv=False):
                 })
 
         # Save CSV
-        if not os.path.exists(stock_id):
-            os.makedirs(stock_id)
-            print(f"Folder '{stock_id}' created.")
+        if not os.path.exists(f"./output/{stock_id}"):
+            os.makedirs(f"./output/{stock_id}")
+            print(f"Folder './output/{stock_id}' created.")
         else:
-            print(f"Folder '{stock_id}' already exists.")
+            print(f"Folder './output/{stock_id}' already exists.")
 
         if save_csv and news_list:
             filename = f"./output/{stock_id}/sina_stock_news_{stock_id}_{datetime.now().strftime('%Y%m%d')}.csv"
@@ -359,11 +359,11 @@ def scrape_aastocks_news(stock_id, save_csv=False, delay=1):
                 news_list.append(news_item)
 
         # Save CSV
-        if not os.path.exists(stock_id):
-            os.makedirs(stock_id)
-            print(f"Folder '{stock_id}' created.")
+        if not os.path.exists(f"./output/{stock_id}"):
+            os.makedirs(f"./output/{stock_id}")
+            print(f"Folder './output/{stock_id}' created.")
         else:
-            print(f"Folder '{stock_id}' already exists.")
+            print(f"Folder './output/{stock_id}' already exists.")
 
         if save_csv and news_list:
             filename = f"./output/{stock_id}/aastocks_news_full_{stock_id}_{datetime.now().strftime('%Y%m%d')}.csv"

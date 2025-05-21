@@ -66,8 +66,8 @@ def create_interactive_chart(df, stock_id):
 
     # ADX
     fig.add_trace(go.Scatter(x=df.index, y=df['ADX_14'], name="ADX"), row=7, col=1)
-    fig.add_hline(y=25, line_dash="dot", line_color="gray", annotation_text="弱趋势", row=7, col=1)
-    fig.add_hline(y=50, line_dash="dot", line_color="gray", annotation_text="强趋势", row=7, col=1)
+    fig.add_hline(y=25, line_dash="dot", line_color="gray", annotation_text="Weak trend", row=7, col=1)
+    fig.add_hline(y=50, line_dash="dot", line_color="gray", annotation_text="Strong trend", row=7, col=1)
 
     # Stochastics (KDJ)
     fig.add_trace(go.Scatter(x=df.index, y=df['%K'], name="%K"), row=8, col=1)
