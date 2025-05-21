@@ -31,8 +31,8 @@ This project integrates **multimodal data sources** (historical stock prices, te
 ## 🛠️ Installation  
 1. **Clone the Repository**  
    ```bash  
-   git clone https://github.com/LutherYTT/AI-Driven Stock Market Analysis.git
-   cd stock-analysis  
+   git clone https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis.git
+   cd AI-Driven-Stock-Market-Analysis
    ```  
 
 2. **Install Dependencies**  
