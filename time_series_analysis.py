@@ -29,13 +29,13 @@ if __name__ == "__main__":
     # print(df.head())
 
     df = calculate_technical_indicators(df)
-    # create_interactive_chart(df)
+    create_interactive_chart(df, stock_id)
 
     print("\nKey statistical indicators:")
     statistics = calculate_statistics(df)
     print(statistics.to_string())
 
-    plot_return_distribution(df)
+    plot_return_distribution(df, stock_id)
 
     if not os.path.exists(f"./output/{stock_id}"):
         os.makedirs(f"./output/{stock_id}")

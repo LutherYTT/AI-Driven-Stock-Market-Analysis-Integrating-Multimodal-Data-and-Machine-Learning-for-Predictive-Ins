@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 
-def create_interactive_chart(df):
+def create_interactive_chart(df, stock_id):
     fig = make_subplots(
                     rows=8, cols=1,
                     shared_xaxes=True,
@@ -77,10 +77,12 @@ def create_interactive_chart(df):
 
     fig.update_layout(height=2000) 
 
+    fig.write_html(f"./output/{stock_id}/interactive_chart.html") # Saves the chart as an interactive HTML file
+
     fig.show()
 
 
-def plot_return_distribution(df):
+def plot_return_distribution(df, stock_id):
     plt.figure(figsize=(12, 6))
     plt.hist(df['Daily Return'].dropna(), bins=100, alpha=0.7,
             color='blue', density=True)
@@ -88,4 +90,5 @@ def plot_return_distribution(df):
     plt.xlabel('Daily Return')
     plt.ylabel('Frequency')
     plt.grid(True)
+    plt.savefig(f"./output/{stock_id}/return_distribution_{datetime.now().strftime('%Y%m%d')}.png")
     plt.show()
