@@ -83,7 +83,8 @@ lstm_price_prediction(df, stock_id)  # Use preprocessed data
 ---
 
 ## 📂 Project Structure  
-```  
+```
+├── assets/
 ├── src/  
 │   ├── data_fetch.py           # Yahoo Finance data retrieval  
 │   ├── preprocessing.py        # Technical indicators and feature engineering  
