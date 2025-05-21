@@ -1,3 +1,5 @@
+# AI-Driven Stock Market Analysis: Integrating Multimodal Data and Machine Learning for Predictive Insights
+
 ## 📈 AI-Driven Stock Market Analysis  
 *A comprehensive framework for stock market forecasting using time series analysis, news sentiment integration, and deep learning.*
 
