@@ -91,14 +91,15 @@ def construct_prompt(stock_id, stock_data, news_text):
 
     Please export your analysis results in the following format:
 
-    Stock risk (1-5): [1-5]
-    Short-term up/down forecast (~30 days): [up/small up/stable/small down/down]
-    Medium-term up/down forecast (~30 days): [up/small up/stable/small down/down]
-    Stock Price Trend: [Up/Down]
-    Recommended Buy Price: [price]
-    Recommended Sell Price: [price]
+    Stock Risk Level (1-10): [1-10] (1 is low risk, 10 is high risk) (with very short explanation) 
+    Stock Trend: [Up/Down] (with very short explanation) 
+    Short Term Up/Down Forecast (~5 days): [Up/Small Up/Smooth/Small Down/Big Down] (with very short explanation) 
+    Mid Term Up/Down Forecast (~30 days): [Up/Small Up/Smooth/Small Down/Big Down] (with very short explanation) )
 
-    Sentiment Analysis: [analysis]
+    News Sentiment [1-10]: [1-10] (1 is extremely negative, 10 is extremely positive) (with very short explanation)
+
+    Suggested Buy Price: [price] (with very short explanation) 
+    Suggested Sell Price: [price] (with very short explanation) 
     Short comment: [brief comment]
     """
     return prompt
