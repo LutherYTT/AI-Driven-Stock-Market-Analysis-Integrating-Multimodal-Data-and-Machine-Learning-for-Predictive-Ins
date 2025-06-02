@@ -20,6 +20,12 @@ if __name__ == "__main__":
 
     stock_id = ticker_symbol.split('.')[0].zfill(5)
 
+    if not os.path.exists(f"./output/{stock_id}"):
+        os.makedirs(f"./output/{stock_id}")
+        print(f"Folder 'output/{stock_id}' created.")
+    else:
+        print(f"Folder './output/{stock_id}' already exists.")
+        
     pd.set_option('display.float_format', lambda x: '%.6f' % x)
     pd.set_option('display.max_columns', None)
 
@@ -37,11 +43,6 @@ if __name__ == "__main__":
 
     plot_return_distribution(df, stock_id)
 
-    if not os.path.exists(f"./output/{stock_id}"):
-        os.makedirs(f"./output/{stock_id}")
-        print(f"Folder '{stock_id}' created.")
-    else:
-        print(f"Folder './output/{stock_id}' already exists.")
     # df.to_csv(f"./output/{stock_id}/time_series_analysis_{datetime.now().strftime('%Y%m%d')}.csv", index=True)
     
     ####################

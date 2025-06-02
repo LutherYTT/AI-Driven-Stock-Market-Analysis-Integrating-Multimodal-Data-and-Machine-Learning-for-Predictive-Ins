@@ -14,6 +14,8 @@ if __name__ == "__main__":
     stock_id = ticker_symbol.split('.')[0].zfill(5)
     
     get_google_news(stock_id)
+    
+    get_usa_google_news(stock_id)
 
     scraper = YahooFinanceScraper()
     news_data_yahoo = scraper.scrape_news(ticker_symbol, max_news=15)

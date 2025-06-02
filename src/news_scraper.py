@@ -2,7 +2,7 @@ from gnews import GNews
 from datetime import datetime, timedelta
 import csv
 
-def get_google_news(stock_id):
+def get_google_news(stock_id, max_news=15):
     # Initialize GNews with various parameters, including proxy
     google_news = GNews(
         language='zh-tw',
@@ -10,11 +10,11 @@ def get_google_news(stock_id):
         period='7d',
         start_date=None,
         end_date=None,
-        max_results=20
+        max_results=max_news
     )
 
     google_news_result = google_news.get_news_by_topic("BUSINESS")
-    print(google_news_result)
+    # print(google_news_result)
 
     # Write the data to a CSV file
     csv_filename = f"./output/{stock_id}/google_news_{datetime.now().strftime('%Y%m%d')}.csv"
@@ -23,6 +23,28 @@ def get_google_news(stock_id):
         writer.writeheader()
         writer.writerows(google_news_result)
 
+def get_usa_google_news(stock_id, max_news=15):
+    # Initialize GNews with various parameters, including proxy
+    google_news = GNews(
+        language='zh-tw',
+        country='US',
+        period='7d',
+        start_date=None,
+        end_date=None,
+        max_results=max_news
+    )
+
+    google_usa_news_result = google_news.get_news_by_topic("BUSINESS")
+    # print(google_usa_news_result)
+
+    # Write the data to a CSV file
+    csv_filename = f"./output/{stock_id}/google_USA_news_{datetime.now().strftime('%Y%m%d')}.csv"
+    with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=["title", "description", "published date", "url", "publisher"])
+        writer.writeheader()
+        writer.writerows(google_usa_news_result)
+
+    print(f"CSV file '{csv_filename}' has been saved successfully!")
 
 import csv
 import requests
@@ -157,7 +179,6 @@ class YahooFinanceScraper:
 
         # Generate Stock Code Catalog
         stock_id = ticker_symbol.split('.')[0].zfill(5)
-        os.makedirs(stock_id, exist_ok=True)
 
         # Creating filenames with timestamps
         timestamp = datetime.now().strftime('%Y%m%d')
@@ -224,12 +245,6 @@ def scrape_sina_stock_news(stock_id, save_csv=False):
                 })
 
         # Save CSV
-        if not os.path.exists(f"./output/{stock_id}"):
-            os.makedirs(f"./output/{stock_id}")
-            print(f"Folder './output/{stock_id}' created.")
-        else:
-            print(f"Folder './output/{stock_id}' already exists.")
-
         if save_csv and news_list:
             filename = f"./output/{stock_id}/sina_stock_news_{stock_id}_{datetime.now().strftime('%Y%m%d')}.csv"
             with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
@@ -359,12 +374,6 @@ def scrape_aastocks_news(stock_id, save_csv=False, delay=1):
                 news_list.append(news_item)
 
         # Save CSV
-        if not os.path.exists(f"./output/{stock_id}"):
-            os.makedirs(f"./output/{stock_id}")
-            print(f"Folder './output/{stock_id}' created.")
-        else:
-            print(f"Folder './output/{stock_id}' already exists.")
-
         if save_csv and news_list:
             filename = f"./output/{stock_id}/aastocks_news_full_{stock_id}_{datetime.now().strftime('%Y%m%d')}.csv"
             with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
