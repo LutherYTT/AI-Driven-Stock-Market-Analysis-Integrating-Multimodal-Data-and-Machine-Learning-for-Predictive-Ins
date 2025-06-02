@@ -104,13 +104,13 @@ python deepseek_integration.py --ticker "01810.HK" --model "deepseek-reasoner"
    ![Interactive Chart Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/asstes/interactive_chart.gif)  
 
 2. **Return Distribution**
-   ![Return Distribution Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/return_distribution_20250521.png)
+   ![Return Distribution Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/return_distribution_20250602.png)
 
 3. **Volatility Clustering**
-   ![Volatility Clustering Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/volatility_clustering_20250521.png)
+   ![Volatility Clustering Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/volatility_clustering_20250602.png)
 
 4. **Anomaly Detection**
-   ![Anomaly Detection Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/anomaly_detection_20250521.png)
+   ![Anomaly Detection Example](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/output/01810/anomaly_detection_20250602.png)
 
 5. **LSTM Price Forecast**  
    ![Forecast Example 1](https://github.com/LutherYTT/AI-Driven-Stock-Market-Analysis/blob/main/asstes/single-feature_lstm.png)
