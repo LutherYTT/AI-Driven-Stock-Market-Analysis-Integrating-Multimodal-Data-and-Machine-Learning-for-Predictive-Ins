@@ -194,10 +194,6 @@ python deepseek_integration.py --ticker "01810.HK" --model "deepseek-reasoner"
 	3. **Macro:** HK market fragility (retail slump, tariff risks).  
 
 	**Disclaimer:** Monitor YU7 production updates and broader market sentiment for adjustments.  
-
-	---  
-	**Analyst: [Your Name]**  
-	**Data Source: AAStocks, Google News, Sina Finance**
    ```  
 
 ---
